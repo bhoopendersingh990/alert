@@ -5,8 +5,8 @@ import os
 app = Flask(__name__)
 
 # Get credentials from environment variables (set these on Railway)
-BOT_TOKEN = os.environ.get('8303574146:AAGmKMA5HUoHp0r-gwk0yx_O8G0IT_u7Y9Y')
-CHAT_ID = os.environ.get('-4875297210')
+BOT_TOKEN = os.environ.get('BOT_TOKEN')
+CHAT_ID = os.environ.get('CHAT_ID')
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
@@ -32,4 +32,5 @@ def webhook():
     return "OK", 200
 
 if __name__ == '__main__':
+
     app.run(host='0.0.0.0', port=os.getenv("PORT", 5000))
